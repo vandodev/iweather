@@ -1,4 +1,4 @@
-import { render, screen } from "@testing-library/react-native"
+import { render, screen, fireEvent  } from "@testing-library/react-native"
 
 import { SelectList } from '@components/SelectList'
 import { CityProps } from "@services/getCityByNameService"
@@ -18,11 +18,7 @@ describe("Component: SelectList", () =>{
         onPress={() => {}}
       />
     )
-    // debug()
-    //leva em cosideração case-sensitive
-    const selectedCity = screen.getByText('/Morro/') //no inicio ou no final
-    // const selectedCity = screen.getByText('/Morro/i') //ignora case sensitive
-    // const selectedCity = screen.getByText('Morro', {exact:false}) //no inicio ou no final
-    console.log(selectedCity)
+    const selectedCity = screen.getByText('/Morro/') 
+    fireEvent.press(selectedCity)
   })
 })
