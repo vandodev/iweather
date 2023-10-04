@@ -20,7 +20,9 @@ describe("Component: SelectList", () =>{
     )
     // debug()
     //leva em cosideração case-sensitive
-    const selectedCity = screen.getByText('Morro Agudo')
+    const selectedCity = screen.getByText('/Morro/') //no inicio ou no final
+    // const selectedCity = screen.getByText('/Morro/i') //ignora case sensitive
+    // const selectedCity = screen.getByText('Morro', {exact:false}) //no inicio ou no final
     console.log(selectedCity)
   })
 })
