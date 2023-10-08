@@ -1,11 +1,11 @@
-import { render } from "@testing-library/react-native"
+import { render, screen } from "@testing-library/react-native"
 import { Day } from "@components/Day"
 
 import clearDay from '@assets/clear_day.svg'
 
 describe('Component: Day', () => {
   it('should be render day', () => {
-    const { debug } = render(
+    render(
       <Day 
         data={{ 
           day: '08/10',
@@ -15,8 +15,9 @@ describe('Component: Day', () => {
           weather: 'Céu limpo'
         }}
       />
-    )
+  );
+      
+    expect(screen.getByText('08/10')).toBeTruthy()
 
-    debug();
   })
 })
